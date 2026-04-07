@@ -1,0 +1,71 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alicia Huang Website 2</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- bkgd vid -->
+     <section>
+        <div id="bkgd-vid">
+            <video autoplay loop muted>
+                <source src="assets/restaurantbkgd.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+
+    <!-- play music text -->
+     <section>
+        <div id="instruction">
+            <span class="highlight-text">
+                Play music and sing for the restaurant!
+            </span>
+        </div>
+     </section>
+
+    <!-- top 3 songs window -->
+     <div id="top-songs-itunes">
+        <h3>Top Classical Piano Tracks</h3>
+        <ol id="itunes-songs">
+            <li>Loading...</li>
+        </ol>
+    </div>
+
+    <!-- piano -->
+     <div id="piano">
+        <ul class="piano-keys">
+            <li class="key white" data-key="a"><span>a</span></li>
+            <li class="key black" data-key="w"><span>w</span></li>
+            <li class="key white" data-key="s"><span>s</span></li>
+            <li class="key black" data-key="e"><span>e</span></li>
+            <li class="key white" data-key="d"><span>d</span></li>
+            <li class="key white" data-key="f"><span>f</span></li>
+            <li class="key black" data-key="t"><span>t</span></li>
+            <li class="key white" data-key="g"><span>g</span></li>
+            <li class="key black" data-key="y"><span>y</span></li>
+            <li class="key white" data-key="h"><span>h</span></li>
+            <li class="key black" data-key="u"><span>u</span></li>
+            <li class="key white" data-key="j"><span>j</span></li>
+            <li class="key white" data-key="k"><span>k</span></li>
+            <li class="key black" data-key="o"><span>o</span></li>
+            <li class="key white" data-key="l"><span>l</span></li>
+            <li class="key black" data-key="p"><span>p</span></li>
+            <li class="key white" data-key=";"><span>;</span></li>
+        </ul>
+     </div>
+
+    <!-- speech bubble -->
+    <div id="speech-wrapper">
+        <button id="mic-btn">🎙️</button>
+        
+        <div id="speech-container">
+            <div id="speech-text">Sing!</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'LobsterFugu', sans-serif;
+}
+@font-face {
+    font-family: 'LobsterFugu';
+    src: url('assets/LobsterFuguRegular-JpaJ7.ttf'), format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+#bkgd-vid {
+    position: relative;
+    display:flex;
+    justify-content: center;
+}
+#bkgd-vid video {
+    height: 100vh;
+    width: 100vw;
+    background-position:aboslute;
+    z-index:1;
+    object-fit:cover;
+}
+#instruction {
+    height: 100vh;
+    width: 100%;
+    z-index:2;
+    position:absolute;
+    top:0;
+    left:0;
+    text-align: center;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size:4rem;
+    color:rgb(0, 0, 0);  
+} 
+.highlight-text {
+    background: linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 28px,
+        #ffeaa7 28px,
+        #ffeaa7 40px
+    );
+}
+#speech-wrapper {
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+#speech-container {
+    width: 40vw;
+    height: 30vh;
+    background-image: url('assets/speechbubble.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    flex-shrink: 0;
+}
+#speech-text {
+    width: 80%;
+    height: 70%;
+    overflow: hidden;
+    text-align: center;
+    font-size: 3rem;
+    color: black;
+}
+#speech-wrapper {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10;
+}
+#mic-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: #000000;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    align-self: flex-end;
+    flex-shrink: 0;
+}
+#mic-btn:hover {
+    background: #d63031;
+}
+#top-songs-itunes {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 20vw;
+    background: #ffffff;
+    border: 2px solid #000;
+    border-radius: 12px;
+    padding: 16px;
+    z-index: 2;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+#top-songs-itunes h3 {
+    margin-bottom: 12px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+#itunes-songs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#itunes-songs li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 8px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+#itunes-songs li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#itunes-songs li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+#itunes-songs li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+#itunes-songs li a i {
+    font-style: italic;
+    color: #555;
+}
+
+#piano {
+    width: 100%;
+    z-index:2;
+    position:absolute;
+    text-align: center;
+    top: 0;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    color: var(--bkgd-color);
+}
+.piano-keys {
+  display: flex;
+  list-style: none;
+  margin-top: 40px;
+}
+.piano-keys .key {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  text-transform: uppercase;
+}
+.piano-keys .black {
+  z-index: 2;
+  width: 44px;
+  height: 140px;
+  margin: 0 -22px 0 -22px;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#333, #000);
+}
+.piano-keys .black.active {
+  box-shadow: inset -5px -10px 10px rgba(255,255,255,0.1);
+  background:linear-gradient(to bottom, #000, #434343);
+}
+.piano-keys .white {
+  height: 230px;
+  width: 70px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  background: linear-gradient(#fff 96%, #eee 4%);
+}
+.piano-keys .white.active {
+  box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
+  background:linear-gradient(to bottom, #fff 0%, #eee 100%);
+}
+.piano-keys .key span {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  color: #A2A2A2;
+  font-size: 1.5rem;
+  text-align: center;
+  left: 0;
+}
+.piano-keys .black span {
+  bottom: 8px;
+  color: #888888;
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 815px) {
+  .piano-keys {
+    margin-top: 20px;
+  }
+  .piano-keys .key:where(:nth-child(9), :nth-child(10)) {
+    display: none;
+  }
+  .piano-keys .black {
+    height: 100px;
+    width: 40px;
+    margin: 0 -20px 0 -20px;
+  }
+  .piano-keys .white {
+    height: 180px;
+    width: 60px;
+  }
+}
+@media screen and (max-width: 615px) {
+  .piano-keys .key:nth-child(13),
+  .piano-keys .key:nth-child(14),
+  .piano-keys .key:nth-child(15),
+  .piano-keys .key:nth-child(16),
+  .piano-keys .key :nth-child(17) {
+    display: none;
+  }
+  .piano-keys .white {
+    width: 50px;
+  }
+}
