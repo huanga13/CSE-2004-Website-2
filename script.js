@@ -89,7 +89,7 @@ async function loadTopITunesSongs() {
 
     try {
         const response = await fetch(
-            "https://itunes.apple.com/search?term=classical+piano&media=music&limit=3&origin=*"
+            "https://corsproxy.io/?https://itunes.apple.com/search?term=classical+piano&media=music&limit=3"
         );
         const data = await response.json();
 
