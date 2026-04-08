@@ -88,9 +88,11 @@ async function loadTopITunesSongs() {
     const listEl = document.getElementById("itunes-songs");
 
     try {
-        const response = await fetch(
-            "https://corsproxy.io/?https://itunes.apple.com/search?term=classical+piano&media=music&limit=3"
-        );
+        const proxyUrl = 'https://api.allorigins.win/raw?url='; // to avoid CORS and iTunes
+        const targetUrl = 'https://itunes.apple.com/search?term=classical+piano&media=music&limit=3';
+        
+        const response = await fetch(proxyUrl + encodeURIComponent(targetUrl));
+
         const data = await response.json();
 
         listEl.innerHTML = "";
